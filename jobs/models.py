@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+#职位类型
 JobTypes = [
     (0, "研发"),
     (1, "运营"),
@@ -15,6 +16,7 @@ JobTypes = [
     (8, "游戏策划")
 ]
 
+#职位城市
 Cities = [
     (0, "北京"),
     (1, "上海"),
@@ -24,6 +26,9 @@ Cities = [
     (5, "广州"),
     (6, "武汉")
 ]
+
+# 职位要求候选人学历
+DEGREE_TYPE = ((u'本科', u'本科'), (u'硕士', u'硕士'), (u'博士', u'博士'))
 
 class Job(models.Model):
     job_type = models.SmallIntegerField(blank=False, choices=JobTypes, verbose_name="职位类别")
