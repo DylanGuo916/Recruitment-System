@@ -7,4 +7,6 @@ urlpatterns = [
     path("joblist/", views.joblist, name="joblist"),
     # 职位详情
     path('job/<int:job_id>/', views.detail, name='detail'),
+    #默认显示页面
+    url(r"$", views.joblist, name="name"),
 ]
