@@ -19,11 +19,14 @@ from django.urls import path
 
 
 urlpatterns = [
-    url(r"^", include("jobs.urls")),
     # 切换不同主题
     # path('bootstrap/', include('bootstrap.urls')),
     # path('swift/', include('swift.urls')),
     # path('xadmin/', include('grappelli.urls')),
     path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('registration.backends.simple.urls')),
+    path("", include("jobs.urls")),
 ]
+
+admin.site.site_header = "招聘系统"

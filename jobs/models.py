@@ -61,10 +61,13 @@ class Resume(models.Model):
 
     # 学校与学历信息
     bachelor_school = models.CharField(max_length=135, blank=True, verbose_name='本科学校')
+    bachelor_major = models.CharField(max_length=135, blank=True, verbose_name='本科专业')
     master_school = models.CharField(max_length=135, blank=True, verbose_name='研究生学校')
-    doctor_school = models.CharField(max_length=135, blank=True, verbose_name=u'博士生学校')
+    master_major = models.CharField(max_length=135, blank=True, verbose_name='研究生专业')
+    doctor_school = models.CharField(max_length=135, blank=True, verbose_name='博士生学校')
+    doctor_major = models.CharField(max_length=135, blank=True, verbose_name='博士专业')
     major = models.CharField(max_length=135, blank=True, verbose_name='专业')
-    degree = models.CharField(max_length=135, choices=DEGREE_TYPE, blank=True, verbose_name='学历')
+    degree = models.CharField(max_length=135, choices=DEGREE_TYPE, blank=True, verbose_name="学历")
     created_date = models.DateTimeField(verbose_name="创建日期", default=datetime.now)
     modified_date = models.DateTimeField(verbose_name="修改日期", auto_now=True)
 

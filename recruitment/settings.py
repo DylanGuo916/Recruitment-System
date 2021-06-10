@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     # 'swift',
     # 'xadmin',
     'grappelli',
+    'bootstrap4',
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

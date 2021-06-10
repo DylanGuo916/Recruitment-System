@@ -17,12 +17,19 @@ class ResumeAdmin(admin.ModelAdmin):
     readonly_fields = ('applicant', 'created_date', 'modified_date',)
     fieldsets = (
         (None, {'fields': (
-            "applicant", ("username", "city", "phone"),
-            ("email", "apply_position", "born_address", "gender", ), ("picture", "attachment",),
-            ("bachelor_school", "master_school"), ("major", "degree"), ('created_date', 'modified_date'),
-            "candidate_introduction", "work_experience","project_experience",)}),
+            "applicant",
+            ("username", "city", "phone"),
+            ("email", "apply_position", "born_address", "gender"),
+            ("bachelor_school", "bachelor_major"),
+            ("master_school", "master_major"),
+            ("doctor_school", "doctor_major"),
+            ("major", "degree"),
+            ('created_date', 'modified_date'),
+            "candidate_introduction",
+            "work_experience",
+            "project_experience")}),
     )
-
+    
     def save_model(self, request, obj, form, change):
         obj.applicant = request.user
         super().save_model(request, obj, form, change)
